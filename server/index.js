@@ -40,7 +40,7 @@ https://api.spotify.com/v1/search?q=genre:genre&type=track&limit=5, basically gi
     const token = await getToken();
     console.log(token);
 
-    let playlistData = await spotifyPlaylist(genre,token ,market);
+    const playlistData = await spotifyPlaylist(genre,token ,market);
     console.log(playlistData);
 
     res.json({
@@ -83,6 +83,25 @@ async function getToken() {
 }
 //interacts with Spotify api nd returns songs
 async function spotifyPlaylist(genre, token,market) {
+
+    const accessToken = token;
+    const offset = Math.floor(Math.random() *3);
+    console.log(offset);
+
+    const response = await axios.get(`https://api.spotify.com/v1/search?q=genre:${genre}&type=track&limit=5&offset=${offset}&market=${market}`, {
+        headers: {
+            'Authorization': `Bearer ${accessToken}`
+        }
+    });
+
+    if(response.statusText === "OK"){
+        const data = await response.data;
+        return data;
+    }
+    else{
+        return null;
+    }
+
 
 }
 
