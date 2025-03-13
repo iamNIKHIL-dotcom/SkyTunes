@@ -38,6 +38,7 @@ https://api.spotify.com/v1/search?q=genre:genre&type=track&limit=5, basically gi
 
     //generate token
     const token = await getToken();
+    console.log(token);
 
     let playlistData = await spotifyPlaylist(genre,token ,market);
     console.log(playlistData);
@@ -54,6 +55,30 @@ https://api.spotify.com/v1/search?q=genre:genre&type=track&limit=5, basically gi
 
 //SPOTIFY NEEDS TO CREATE TOKEN when im using it API
 async function getToken() {
+    //using clientId,clientSecret
+
+    const client_id = process.env.clientId;
+    const client_secret = process.env.clientSecret;
+    //copied from Spotify developers pages
+    
+    try {
+        const response = await axios.post(
+            "https://accounts.spotify.com/api/token",
+            new URLSearchParams({ grant_type: "client_credentials" }),
+            {
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    Authorization: `Basic ${Buffer.from(client_id + ":" + client_secret).toString("base64")}`,
+                },
+            }
+        );
+        return response.data.access_token;
+    } catch (error) {
+        console.error("Error fetching token:", error.response?.data || error.message);
+        return null;
+    }
+    
+
     
 }
 //interacts with Spotify api nd returns songs
