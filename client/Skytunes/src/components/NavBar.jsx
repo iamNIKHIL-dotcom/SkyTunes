@@ -1,4 +1,8 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import logo from '../assets/logo.png';
+
+
 
 const NavBar = ()=>{
 
@@ -11,12 +15,9 @@ const NavBar = ()=>{
 
                     <a href='/'>
 
-                        <img className='logo-img' 
-                             src = "/logo-base.png"
-                             alt  = "SkyTunes logo"
-                        />
+                        <img className='logo-img' src={logo} alt="SkyTunes logo" />
 
-                        <span>SkyTunes</span>
+                        <span className="logo-txt">SkyTunes</span>
                     </a>
 
                 </div>
