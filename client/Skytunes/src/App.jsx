@@ -6,11 +6,34 @@ import NavBar from './components/NavBar'
 import "./styles/main.css"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [ weatherData, setWeatherData ] = useState(null);
+  const [ playlistData, setPlaylistData ] = useState(null);
+  const [ isLoading, setIsLoading ] = useState(false);
+  const [error, setError ] = useState(null);
+  
+
+  const handleSubmit = async (city) => {
+    try{
+      setIsLoading(true);
+      setError(null);
+      const data = await getWeatherAndPlaylist(city);
+      setWeatherData(data.weatherData);
+      setPlaylistData(data.playlistData);
+    }catch(error){
+      setError(error.message);
+      alert("Enter a valid city name or check your internet");
+    }
+    finally{
+      setIsLoading(false);
+    }
+    
+  }
 
   return (
     <>
       <NavBar></NavBar>
+
+      <HeroSection onSubmit = {handleSubmit} />
     </>
   )
 }
