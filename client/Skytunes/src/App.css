@@ -1,0 +1,8 @@
+
+.app {
+    display: flex;
+    flex-direction: column; /* Ensures elements stack vertically */
+    align-items: center; /* Optional: Centers content horizontally */
+    width: 100%;
+  }
+  

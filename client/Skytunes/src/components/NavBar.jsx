@@ -7,8 +7,8 @@ import logo from '../assets/logo.png';
 const NavBar = ()=>{
 
     return (
-        <>
-            <nav className='navbar'>
+        
+            <div className='navbar'>
 
 
                 <div className="nav-logo">
@@ -31,10 +31,10 @@ const NavBar = ()=>{
                     <a href='/'>Go Home</a>
 
                 </div>
-            </nav>
+            </div>
         
         
-        </>
+        
     )
 }
 

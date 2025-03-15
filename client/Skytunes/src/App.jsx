@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import NavBar from './components/NavBar'
 import "./styles/main.css"
+import ErrorBoundary from "./components/ErrorBoundary"
+import HeroSection from "./components/HeroSection"
 
 function App() {
   const [ weatherData, setWeatherData ] = useState(null);
@@ -16,7 +18,7 @@ function App() {
     try{
       setIsLoading(true);
       setError(null);
-      const data = await getWeatherAndPlaylist(city);
+      //const data = await getWeatherAndPlaylist(city);
       setWeatherData(data.weatherData);
       setPlaylistData(data.playlistData);
     }catch(error){
@@ -30,11 +32,15 @@ function App() {
   }
 
   return (
-    <>
+    <div className='app'>
       <NavBar></NavBar>
 
-      <HeroSection onSubmit = {handleSubmit} />
-    </>
+      <ErrorBoundary>
+
+        <HeroSection onSubmit = {handleSubmit} />
+      </ErrorBoundary>
+
+    </div>
   )
 }
 

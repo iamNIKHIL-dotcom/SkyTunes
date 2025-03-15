@@ -14,8 +14,8 @@ const HeroSection = ({ onSubmit })=>{
     }
 
     return (
-        <main>
-            <div>
+        <div className="hero-section">
+            <div className="emoji-container">
                 <img>
                 
                 </img>
@@ -44,14 +44,17 @@ const HeroSection = ({ onSubmit })=>{
                      required = "true"
                     />
 
-                    <button type = "submit" className="submit-btn">
-                        Find My PlayList
-                    </button>
-
+                    <div>    
+                        <button type = "submit" className="submit-btn">
+                            Find My PlayList
+                        </button>
+                    </div>
                 </form>
 
             </div>
         
-        </main>
+        </div>
     )
 }
+
+export default HeroSection;
