@@ -6,6 +6,7 @@ import NavBar from './components/NavBar'
 import "./styles/main.css"
 import ErrorBoundary from "./components/ErrorBoundary"
 import HeroSection from "./components/HeroSection"
+import weatherDisplay from "./components/weatherDisplay"
 
 function App() {
   const [ weatherData, setWeatherData ] = useState(null);
@@ -38,7 +39,14 @@ function App() {
       <ErrorBoundary>
 
         <HeroSection onSubmit = {handleSubmit} />
+
+        {weatherData && playlistData && (
+          <weatherDisplay weatherData= { weatherData}
+                          playlistData = { playlistData} />
+        )}
       </ErrorBoundary>
+      
+
 
     </div>
   )

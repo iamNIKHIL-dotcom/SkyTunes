@@ -4,7 +4,7 @@ const HeroSection = ({ onSubmit })=>{
 
     const [ city, setCity ] = useState("");
 
-    const HandleSubmit = (e) =>{
+    const handleSubmit = (e) =>{
         e.preventDefault();
         if(!city.trim()){
             alert('city name required');
@@ -34,7 +34,7 @@ const HeroSection = ({ onSubmit })=>{
                     Find your Perfect PlayList
                 </h1>
                 <p>Enter your name city name and discover a curated PlayList</p>
-                <form onSubmit= { HandleSubmit }>
+                <form onSubmit= { handleSubmit }>
 
                     <input type = "text"
                      value= {city} 
