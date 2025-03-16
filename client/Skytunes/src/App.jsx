@@ -7,29 +7,31 @@ import "./styles/main.css"
 import ErrorBoundary from "./components/ErrorBoundary"
 import HeroSection from "./components/HeroSection"
 import weatherDisplay from "./components/weatherDisplay"
+import { getWeatherAndPlaylist } from './utils/api'
+
 
 function App() {
-  const [ weatherData, setWeatherData ] = useState(null);
-  const [ playlistData, setPlaylistData ] = useState(null);
-  const [ isLoading, setIsLoading ] = useState(false);
-  const [error, setError ] = useState(null);
-  
+  const [weatherData, setWeatherData] = useState(null);
+  const [playlistData, setPlaylistData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
 
   const handleSubmit = async (city) => {
-    try{
+    try {
       setIsLoading(true);
       setError(null);
-      //const data = await getWeatherAndPlaylist(city);
+      const data = await getWeatherAndPlaylist(city);
       setWeatherData(data.weatherData);
       setPlaylistData(data.playlistData);
-    }catch(error){
+    } catch (error) {
       setError(error.message);
       alert("Enter a valid city name or check your internet");
     }
-    finally{
+    finally {
       setIsLoading(false);
     }
-    
+
   }
 
   return (
@@ -38,14 +40,14 @@ function App() {
 
       <ErrorBoundary>
 
-        <HeroSection onSubmit = {handleSubmit} />
+        <HeroSection onSubmit={handleSubmit} />
 
         {weatherData && playlistData && (
-          <weatherDisplay weatherData= { weatherData}
-                          playlistData = { playlistData} />
+          <weatherDisplay weatherData={weatherData}
+            playlistData={playlistData} />
         )}
       </ErrorBoundary>
-      
+
 
 
     </div>
