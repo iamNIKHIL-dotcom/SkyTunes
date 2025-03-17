@@ -23,7 +23,7 @@ const NavBar = ()=>{
                 </div>
                 <div className="nav-btn">
 
-                    <a href='https:my gitHub'
+                    <a href='https://github.com/iamNIKHIL-dotcom'
                         target='_blank'
                         className='social-btn'>
                             GitHub

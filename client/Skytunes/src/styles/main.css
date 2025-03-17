@@ -10,9 +10,9 @@
     font-size : 25.5px;
     font-weight: 550;
     /* background: #FFFFFF; */
-    padding-bottom: 200px;
+    padding-bottom: 0;
     /* padding-top: -20px; */
-    
+    vertical-align: middle;
 }
 .navbar{
     display: flex;
@@ -20,7 +20,7 @@
     align-items: center;
     position: fixed;
     left: 50%;
-    top: 28px;
+    top: 20px;
     transform: translate(-50%);
     width: 36.5rem;
     z-index: 3;
@@ -32,7 +32,7 @@
     /* --tw-backdrop-blue: blur(52px);
     backdrop-filter: blur(52px); */
     padding: .5rem 1.5rem;
-    height: 3.75;
+    height: 3.75rem;
     font-size: 1rem;
     border: 1px solid rgba(255, 241, 241, 0.11);
     /* box-shadow: rgba(143, 153, 165, 0.2) 0px 8px 24px; */
@@ -41,16 +41,15 @@
 }
 .hero-section{
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255,255,255,0.06)'><path d='M0 .5H31.5V32'/></svg>");
-    
+    width: 100%;
     height: min-content;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 12.5rem 1.5rem 4.25rem;
-    width: 100%;
-    min-height: 98vh;
-    background-size: cover;
+    padding: 8rem 1.5rem 4.25rem;
+    margin-top: 0;
+    box-sizing: border-box;
 }
 
 
@@ -249,4 +248,62 @@ footer{
     text-decoration: none;
     color: white;
 }
-  
+  /* emojis */
+  .emoji{
+    position: absolute;
+    width: 5.5rem;
+    height: 5.5rem;
+}
+
+.e1 {
+    top: 50%;
+    left: 10%;
+}
+
+.e2 {
+    top: 30%;
+    left: 90%;
+}
+
+.e3 {
+    top: 20%;
+    left: 30%;
+}
+
+.e9 {
+    top: 70%;
+    left: 10%;
+}
+
+.e6 {
+    top: 60%;
+    left: 80%;
+}
+.e7{
+    top: 40%;
+    left: 20%
+}
+
+.nav-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.nav-btn a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.nav-btn a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+}

@@ -1,3 +1,25 @@
+body {
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  color: #ffffff; /* Ensure text is readable on a dark background */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Ensures elements stack vertically */
+  align-items: center; /* Centers content horizontally */
+  padding-top: 0; /* Remove top padding */
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255,255,255,0.06)'><path d='M0 .5H31.5V32'/></svg>");
+
+}
 
 .app {
     display: flex;
