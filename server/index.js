@@ -41,7 +41,7 @@ https://api.spotify.com/v1/search?q=genre:genre&type=track&limit=5, basically gi
     console.log(token);
 
     const playlistData = await spotifyPlaylist(genre,token ,market);
-    console.log(playlistData);
+    console.log("Spotify API response:", playlistData);
 
     res.json({
         tracks : playlistData,
@@ -91,8 +91,8 @@ async function spotifyPlaylist(genre, token,market) {
     const response = await axios.get(`https://api.spotify.com/v1/search?q=genre:${genre}&type=track&limit=5&offset=${offset}&market=${market}`, {
         headers: {
             'Authorization': `Bearer ${accessToken}`
-        }
-    });
+        }
+    });
 
     if(response.statusText === "OK"){
         const data = await response.data;

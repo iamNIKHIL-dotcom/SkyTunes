@@ -1,6 +1,6 @@
 const weatherApiKey = "86356b7b82d61c74478e6b855108c657"
-
-const BACKEND_URL = `http://localhost:${process.env.YOUR_PORT}`
+const WEATHER_API_KEY = weatherApiKey
+const BACKEND_URL = "http://localhost:3005"
 
 export const getWeatherAndPlaylist = async (city) => {
     try {
@@ -31,7 +31,13 @@ export const getWeatherAndPlaylist = async (city) => {
       }
   
       const playlistData = await playlistResponse.json();
-  
+      
+      // Debug logs
+      console.log("Weather data:", weatherData);
+      console.log("Playlist data:", playlistData);
+      console.log("Playlist tracks structure:", playlistData.tracks);
+      
+      // Make sure we're returning the data in the expected format
       return {
         weatherData: {
           temperature: weatherData.main.temp - 273,
@@ -39,6 +45,7 @@ export const getWeatherAndPlaylist = async (city) => {
           city: city
         },
         playlistData: {
+          // Pass the entire tracks object as is
           tracks: playlistData.tracks,
           genre: playlistData.genre
         }

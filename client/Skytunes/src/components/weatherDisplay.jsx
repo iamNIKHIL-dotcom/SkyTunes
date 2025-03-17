@@ -1,12 +1,21 @@
 import React from 'react';
 
-const weatherDisplay = ({weatherData, playlistData})=>{
-    if(!weatherData || playlistData){
+const WeatherDisplay = ({weatherData, playlistData})=>{
+    if(!weatherData || !playlistData){
         return null;
     }
 
     const { temperature, weather, city }= weatherData;
     const { tracks, genre } = playlistData;
+    
+    // Spotify API returns tracks in tracks.tracks.items
+    // Check the structure and access the items correctly
+    console.log("Tracks structure:", tracks);
+    
+    // The correct path to access track items depends on the Spotify API response structure
+    // It's likely tracks.tracks.items or just tracks.items
+    const trackItems = tracks?.tracks?.items || [];
+    console.log("Track items:", trackItems);
 
     return (
         <div className = "song display-section">
@@ -28,42 +37,48 @@ const weatherDisplay = ({weatherData, playlistData})=>{
 
                     <p className='album-title'>Songs for the mood</p>
                     {
-                        tracks.items.slice(0,4).map((tracks,index) => {
-                            <a
-                                key={track.id}
-                                className="song-details"
-                                href={track.uri}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                >
-                                <div className="album-img">
-                                    <img
-                                    className="album-img"
-                                    src={track.album.images[0].url}
-                                    alt={`${track.name} album cover`}
-                                    style={{ backgroundColor: 'rgb(22,22,22)' }}
-                                    />
-                                </div>
-                                <div className="album-details">
-                                    <div className="album-name">{track.name}</div>
-                                    <div className="artist-name">{track.artists[0].name}</div>
-                                </div>
-                            </a>
-                        })
+                        trackItems.length > 0 ? (
+                            trackItems.slice(0,4).map((track,index) => (
+                                <a
+                                    key={track.id || index}
+                                    className="song-details"
+                                    href={track.uri}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >
+                                    <div className="album-img">
+                                        <img
+                                        className="album-img"
+                                        src={track.album?.images[0]?.url}
+                                        alt={`${track.name} album cover`}
+                                        style={{ backgroundColor: 'rgb(22,22,22)' }}
+                                        />
+                                    </div>
+                                    <div className="album-details">
+                                        <div className="album-name">{track.name}</div>
+                                        <div className="artist-name">{track.artists?.[0]?.name}</div>
+                                    </div>
+                                </a>
+                            ))
+                        ) : (
+                            <p>No tracks available</p>
+                        )
                     }
 
-                    <a
-                        href={tracks.items[0]?.uri}
-                        className="spotify-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                    Open in Spotify
-                     </a>
+                    {trackItems.length > 0 && (
+                        <a
+                            href={trackItems[0]?.uri}
+                            className="spotify-button"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                        Open in Spotify
+                        </a>
+                    )}
                 </div>
             </div>
             
         </div>
     )
 }
-export default weatherDisplay;
+export default WeatherDisplay;

@@ -6,7 +6,8 @@ import NavBar from './components/NavBar'
 import "./styles/main.css"
 import ErrorBoundary from "./components/ErrorBoundary"
 import HeroSection from "./components/HeroSection"
-import weatherDisplay from "./components/weatherDisplay"
+import WeatherDisplay from "./components/WeatherDisplay"
+
 import { getWeatherAndPlaylist } from './utils/api'
 
 
@@ -43,7 +44,7 @@ function App() {
         <HeroSection onSubmit={handleSubmit} />
 
         {weatherData && playlistData && (
-          <weatherDisplay weatherData={weatherData}
+          <WeatherDisplay weatherData={weatherData}
             playlistData={playlistData} />
         )}
       </ErrorBoundary>
