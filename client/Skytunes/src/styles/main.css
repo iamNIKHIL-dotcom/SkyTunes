@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+
 * {
     box-sizing: border-box;
   }
@@ -306,4 +309,37 @@ footer{
 
 .social-btn {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+.location-input-section {
+    border: 1px solid rgb(34,34,34); 
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    background-color: rgba(13 13 31 .9);
+    backdrop-filter: blur(88.9357px);
+    /* width: 37.125rem; */
+    width: 100%;
+    gap : 0.6rem;
+    
+
+}
+.location-inp{
+    background-color: rgb(32 32 55);
+    padding: 15px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light","HelveticaNeue Light", sans-serif;
+    color: whitesmoke;
+    font-size: 1.125rem;
+    box-shadow: rgba(31, 31, 105, 0.7) 0px 0px 154px 0px;
+    border: none;
+    border-radius: 10px;
+    
+    
+    
+}
+.submit-btn{
+    border-radius: 10px;
+    padding: 11px;
 }
