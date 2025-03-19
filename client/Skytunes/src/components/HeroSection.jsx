@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-//
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpotify } from '@fortawesome/free-brands-svg-icons';
+
 
 const HeroSection = ({ onSubmit }) => {
   const [city, setCity] = useState('');
@@ -58,7 +60,8 @@ const HeroSection = ({ onSubmit }) => {
           />
           <button type="submit" className="submit-btn">
             <span>
-              {/* <FontAwesomeIcon icon={faSpotify} /> */}
+              <FontAwesomeIcon icon={faSpotify} className="spotify-icon" />
+              {/* {<FontAwesomeIcon icon="fa-brands fa-spotify" />} */}
             </span>
             Find My Playlist
           </button>

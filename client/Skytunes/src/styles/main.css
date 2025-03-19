@@ -342,4 +342,14 @@ footer{
 .submit-btn{
     border-radius: 10px;
     padding: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submit-btn:hover {
+    background-color: #1ed760; /* Slightly lighter green on hover */
+  }
+.spotify-icon {
+  font-size: 1.5rem; /* Adjust the size as needed */
+  margin-right: 8px; /* Optional: Add some space between the icon and text */
 }
