@@ -345,11 +345,21 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #0056d6;
+    border: none;
 }
 .submit-btn:hover {
-    background-color: #1ed760; /* Slightly lighter green on hover */
+    /* background-color: #1ed760; Slightly lighter green on hover */
+    background-color: aliceblue;
+    color: green;
   }
 .spotify-icon {
   font-size: 1.5rem; /* Adjust the size as needed */
   margin-right: 8px; /* Optional: Add some space between the icon and text */
+}
+.footer{
+    width: 100%;
+    padding: .8rem;
+    gap: .8rem;
+    font-size: .575rem;
 }

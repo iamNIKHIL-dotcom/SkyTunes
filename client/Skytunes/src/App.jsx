@@ -7,6 +7,7 @@ import "./styles/main.css"
 import ErrorBoundary from "./components/ErrorBoundary"
 import HeroSection from "./components/HeroSection"
 import WeatherDisplay from "./components/WeatherDisplay"
+import Footer from "./components/Footer"
 
 import { getWeatherAndPlaylist } from './utils/api'
 
@@ -47,6 +48,8 @@ function App() {
           <WeatherDisplay weatherData={weatherData}
             playlistData={playlistData} />
         )}
+
+        <Footer></Footer>
       </ErrorBoundary>
 
 
