@@ -26,14 +26,14 @@ const WeatherDisplay = ({weatherData, playlistData})=>{
                     <img />
                     
                     <div className='weather-details'>
-                        <h2 className='temperature'>{Math.floor(temperature)}</h2>
+                        <h2 className='temperature'>{Math.floor(temperature)} °C</h2>
                         <p className="weather-description">{weather}</p>
                     </div>
                 </div>
 
                 {/* Playlist Info  */}
                 <div>
-                    <div className="playlist-tile">{weather} Vibes</div>
+                    {/* <div className="playlist-title">{weather} Vibes</div> */}
 
                     <p className='album-title'>Songs for the mood</p>
                     {
@@ -72,7 +72,8 @@ const WeatherDisplay = ({weatherData, playlistData})=>{
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                        Open in Spotify
+                            <i className="fab fa-spotify"></i>
+                            Open in Spotify
                         </a>
                     )}
                 </div>
