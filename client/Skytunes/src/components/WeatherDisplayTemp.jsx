@@ -19,7 +19,7 @@ const WeatherDisplay = ({weatherData, playlistData})=>{
 
     return (
         <div className = "song display-section">
-            <div className='weather-playlist-dsiplay'>
+            <div className='weather-playlist-display'>
 
                 {/* weather Info  */}
                 <div className='weather-info'>

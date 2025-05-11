@@ -1,8 +1,7 @@
 const weatherApiKey = "86356b7b82d61c74478e6b855108c657"
 const WEATHER_API_KEY = weatherApiKey
 // const BACKEND_URL = "http://localhost:3005"
-// const BACKEND_URL = "https://sky-tunes.vercel.app/"
-
+const BACKEND_URL = "https://sky-tunes-007.vercel.app/"
 export const getWeatherAndPlaylist = async (city) => {
     try {
       // Get weather data

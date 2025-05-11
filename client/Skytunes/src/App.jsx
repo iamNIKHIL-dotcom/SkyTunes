@@ -6,7 +6,7 @@ import NavBar from './components/NavBar'
 import "./styles/main.css"
 import ErrorBoundary from "./components/ErrorBoundary"
 import HeroSection from "./components/HeroSection"
-import WeatherDisplay from "./components/WeatherDisplay"
+import WeatherDisplay from "./components/WeatherDisplayTemp"
 import Footer from "./components/Footer"
 
 import { getWeatherAndPlaylist } from './utils/api'
@@ -45,7 +45,7 @@ function App() {
 
         <HeroSection onSubmit={handleSubmit} />
         { isLoading && <LoadingSpinner /> }
-        
+
         {weatherData && playlistData && (
           <WeatherDisplay weatherData={weatherData}
             playlistData={playlistData} />
