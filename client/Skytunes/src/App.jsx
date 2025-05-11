@@ -10,6 +10,7 @@ import WeatherDisplay from "./components/WeatherDisplay"
 import Footer from "./components/Footer"
 
 import { getWeatherAndPlaylist } from './utils/api'
+import LoadingSpinner from './components/LoadingSpinner'
 
 
 function App() {
@@ -43,7 +44,8 @@ function App() {
       <ErrorBoundary>
 
         <HeroSection onSubmit={handleSubmit} />
-
+        { isLoading && <LoadingSpinner /> }
+        
         {weatherData && playlistData && (
           <WeatherDisplay weatherData={weatherData}
             playlistData={playlistData} />

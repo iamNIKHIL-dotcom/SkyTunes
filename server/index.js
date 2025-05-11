@@ -17,6 +17,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 
 
+
 app.post("/", async (req, res) => {
     let city = req.body.city
     let weather = req.body.weather
