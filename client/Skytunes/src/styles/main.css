@@ -445,6 +445,7 @@ footer{
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 86, 214, 0.3);
+    white-space: nowrap;
   }
   
   .submit-btn:hover {
