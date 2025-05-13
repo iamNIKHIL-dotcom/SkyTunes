@@ -367,17 +367,25 @@ footer{
     font-size: 1.4rem;
 }
 
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Consistent gap between buttons */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
 .nav-btn a {
-    margin-left: 15px;
-    text-decoration: none;
-    color: #ffffff;
-    padding: 8px 15px;
-    border-radius: 20px;
-    transition: background-color 0.3s;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
+  margin-left: 0; /* Remove the previous margin */
+  text-decoration: none;
+  color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .nav-btn a:hover {
@@ -551,8 +559,8 @@ h1, h2, h3 {
 
 @media (max-width: 768px) {
   .navbar {
-    width: 90%;
-    max-width: 36.5rem;
+    width: 95%;
+    padding: 0.4rem 1rem;
   }
   
   .title {
@@ -563,6 +571,15 @@ h1, h2, h3 {
     width: 4rem;
     height: 4rem;
   }
+
+  .nav-btn {
+    gap: 8px; /* Slightly reduce gap on smaller screens */
+  }
+
+  .nav-btn a {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -571,7 +588,8 @@ h1, h2, h3 {
   }
   
   .navbar {
-    padding: 0.5rem 1rem;
+    width: 92%;
+    padding: 0.3rem 0.8rem;
   }
   
   .title {
@@ -590,6 +608,22 @@ h1, h2, h3 {
   .song-details {
     padding: 0.5rem;
     gap: 0.8rem;
+  }
+
+  .nav-btn {
+    gap: 6px; /* Further reduce gap on mobile */
+  }
+
+  .nav-btn a {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-btn a {
+    padding: 4px 8px;
+    font-size: 0.7rem;
   }
 }
 
