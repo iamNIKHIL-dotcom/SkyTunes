@@ -28,7 +28,10 @@ const NavBar = ()=>{
                         className='social-btn'>
                             GitHub
                     </a>
+                    
+
                     <a href='/'>Go Home</a>
+                    
 
                 </div>
             </div>
